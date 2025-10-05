@@ -1,4 +1,4 @@
-# basic hyprland 
+# basic hyprland
 sudo pacman -S hyprland git kitty ghostty nvim hyprpaper hypridle hyprlock hyprsunset sddm wayland waybar wayland-protocols libdrm thunar copyq --noconfirm
 
 # yay install
@@ -9,30 +9,31 @@ makepkg -si
 cd ..
 rm -rf yay
 
-# enable sddm 
+# enable sddm
 sudo systemctl enable sddm
 
-# networking 
-pacman -S networkmanager nm-connection-editor --noconfirm
-systemctl enable NetworkManager
-systemctl start NetworkManager
-pacman -S network-manager-applet
+# networking
+sudo pacman -S networkmanager nm-connection-editor --noconfirm
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+sudo pacman -S network-manager-applet --noconfirm
 
-# audio 
-pacman -S pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
-systemctl --user enable pipewire pipewire-pulse wireplumber
-systemctl --user start pipewire pipewire-pulse wireplumber
-pacman -S pavucontrol --noconfirm 
+# audio
+sudo pacman -S pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
+sudo systemctl --user enable pipewire pipewire-pulse wireplumber
+sudo systemctl --user start pipewire pipewire-pulse wireplumber
+sudo pacman -S pavucontrol --noconfirm
 
 # fonts
 pacman -S ttf-dejavu ttf-font-awesome noto-fonts --noconfirm
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra --no-confirm
-yay -S nerd-fonts-complete --noconfirm 
+yay -S nerd-fonts-complete --noconfirm
 sudo fc-cache -fv
 
-# tmux 
-sudo pacman -S tmux --noconfirm 
-git clone --single-branch https://github.com/gpakosz/.tmux.git "/path/to/oh-my-tmux"
+# tmux
+sudo pacman -S tmux --noconfirm
+git clone --single-branch https://github.com/gpakosz/.tmux.git
 mkdir -p ~/.config/tmux
-ln -s /path/to/oh-my-tmux/.tmux.conf ~/.config/tmux/tmux.conf
-cp /path/to/oh-my-tmux/.tmux.conf.local ~/.config/tmux/tmux.conf.local
+ln -s .tmux/.tmux.conf ~/.config/tmux/tmux.conf
+cp .tmux/.tmux.conf.local ~/.config/tmux/tmux.conf.local
+
