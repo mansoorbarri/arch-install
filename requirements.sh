@@ -37,3 +37,9 @@ mkdir -p ~/.config/tmux
 ln -s .tmux/.tmux.conf ~/.config/tmux/tmux.conf
 cp .tmux/.tmux.conf.local ~/.config/tmux/tmux.conf.local
 
+# additional programs
+sudo pacman -S --noconfirm mpv sudo pacman -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
+# set theme
+systemctl --user daemon-reload
+systemctl --user restart xdg-desktop-portal.service xdg-desktop-portal-hyprland.service xdg-desktop-portal-gtk.service
